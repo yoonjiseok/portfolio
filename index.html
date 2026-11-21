@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>윤지석 | AX 개발자 포트폴리오</title>
+<meta name="description" content="현업의 요청을 시스템이 알아듣게 만드는 AX 개발자 윤지석의 포트폴리오입니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #070A12;
+  --bg-2: #0B1020;
+  --card: rgba(255, 255, 255, .035);
+  --card-solid: #0E1424;
+  --line: rgba(255, 255, 255, .09);
+  --line-strong: rgba(255, 255, 255, .16);
+  --text: #EEF1F8;
+  --muted: #8E98AD;
+  --faint: #5A647A;
+  --a1: #8B7BFF;
+  --a2: #38D6E8;
+  --c-exp: #FF8F66;
+  --c-proj: #3FDDE0;
+  --c-skill: #FFCE5C;
+  --c-award: #B9A2FF;
+  --c-contact: #71A9FF;
+  --glow-1: rgba(124, 92, 255, .22);
+  --glow-2: rgba(34, 211, 238, .14);
+  --shadow: 0 24px 80px rgba(0, 0, 0, .45);
+  --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif;
+  --mono: "JetBrains Mono", "D2Coding", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #F5F6FA;
+    --bg-2: #ECEEF5;
+    --card: rgba(255, 255, 255, .78);
+    --card-solid: #FFFFFF;
+    --line: rgba(12, 20, 40, .09);
+    --line-strong: rgba(12, 20, 40, .18);
+    --text: #0B1220;
+    --muted: #586177;
+    --faint: #8A93A6;
+    --a1: #6A4DF5;
+    --a2: #0FA3B8;
+    --c-exp: #E2591B;
+    --c-proj: #0B95A1;
+    --c-skill: #B27A0C;
+    --c-award: #7048E8;
+    --c-contact: #2B6AE6;
+    --glow-1: rgba(106, 77, 245, .13);
+    --glow-2: rgba(15, 163, 184, .10);
+    --shadow: 0 24px 60px rgba(20, 30, 60, .10);
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #F5F6FA; --bg-2: #ECEEF5;
+  --card: rgba(255, 255, 255, .78); --card-solid: #FFFFFF;
+  --line: rgba(12, 20, 40, .09); --line-strong: rgba(12, 20, 40, .18);
+  --text: #0B1220; --muted: #586177; --faint: #8A93A6;
+  --a1: #6A4DF5; --a2: #0FA3B8;
+  --c-exp: #E2591B; --c-proj: #0B95A1; --c-skill: #B27A0C; --c-award: #7048E8; --c-contact: #2B6AE6;
+  --glow-1: rgba(106, 77, 245, .13); --glow-2: rgba(15, 163, 184, .10);
+  --shadow: 0 24px 60px rgba(20, 30, 60, .10);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(900px 520px at 18% -8%, var(--glow-1), transparent 62%),
+    radial-gradient(820px 520px at 92% 4%, var(--glow-2), transparent 60%),
+    var(--bg);
+}
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--a2); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; white-space: nowrap; }
+.brand i {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--a1), var(--a2));
+  box-shadow: 0 0 14px var(--a1);
+}
+.brand span { color: var(--muted); font-weight: 500; }
+.links { display: flex; align-items: center; gap: 4px; }
+.links a { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-size: 14.5px; font-weight: 500; }
+.links a:hover { color: var(--text); background: var(--card); }
+.links a.gh { color: var(--text); border: 1px solid var(--line-strong); margin-left: 8px; }
+
+/* ---------- hero ---------- */
+.hero { padding: 84px 0 28px; text-align: center; }
+.hero h1 {
+  margin: 0 auto 20px; max-width: 12.5em;
+  font-size: clamp(34px, 6vw, 68px);
+  line-height: 1.14; letter-spacing: -0.045em; font-weight: 750;
+  text-wrap: balance;
+}
+.hero > p {
+  margin: 0 auto; max-width: 33em;
+  color: var(--muted); font-size: clamp(15.5px, 1.5vw, 18px);
+  text-wrap: pretty;
+}
+
+/* ---------- console ---------- */
+.console {
+  margin-top: 48px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(180deg, var(--card), transparent 140%), var(--card-solid);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  text-align: left;
+}
+.graph {
+  position: relative;
+  padding: 36px 28px 34px;
+}
+.graph::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 70% 75% at 50% 45%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 75% at 50% 45%, #000 20%, transparent 75%);
+  opacity: .55;
+}
+.wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.wire-base { fill: none; stroke: var(--line-strong); stroke-width: 1.5; }
+.wire-beam {
+  fill: none; stroke: var(--c, var(--a1)); stroke-width: 2.5; stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 6px var(--c, var(--a1)));
+  transition: stroke-dashoffset .62s cubic-bezier(.6, 0, .2, 1);
+}
+.wire-beam.on { stroke-dashoffset: 0; }
+.comet { fill: #fff; filter: drop-shadow(0 0 8px var(--c, var(--a1))) drop-shadow(0 0 2px var(--c, var(--a1))); }
+
+.prompt { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.prompt label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 7px 7px 18px;
+  background: var(--card-solid);
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.bar:focus-within { border-color: var(--a1); box-shadow: 0 0 0 4px color-mix(in srgb, var(--a1) 22%, transparent); }
+.bar svg { flex: none; color: var(--faint); }
+.bar input {
+  flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text);
+  font: inherit; font-size: 16.5px; padding: 10px 4px;
+}
+.bar input::placeholder { color: var(--faint); }
+.bar input:focus-visible { outline: none; }
+.bar button {
+  flex: none; border: 0; cursor: pointer; white-space: nowrap;
+  font: inherit; font-weight: 650; font-size: 15px; color: #fff;
+  padding: 11px 18px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--a1), color-mix(in srgb, var(--a1) 45%, var(--a2)));
+}
+.bar button[disabled] { opacity: .5; cursor: progress; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
+.chips button {
+  font: inherit; font-size: 13.5px; cursor: pointer; color: var(--muted);
+  background: var(--card-solid); border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 13px; transition: color .15s, border-color .15s;
+}
+.chips button:hover { color: var(--text); border-color: var(--line-strong); }
+
+.orch-row { position: relative; z-index: 1; display: flex; justify-content: center; margin-top: 54px; }
+.orch {
+  position: relative;
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 22px 14px 14px;
+  border-radius: 20px;
+  background: var(--card-solid);
+  border: 1px solid var(--line-strong);
+}
+.orch::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1.5px;
+  background: conic-gradient(from var(--spin, 0deg), var(--a1), var(--a2), transparent 55%, var(--a1));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0; transition: opacity .25s;
+}
+.orch.busy::before { opacity: 1; animation: spin 1.4s linear infinite; }
+.orch.done::before { opacity: .9; }
+.orch.busy, .orch.done { box-shadow: 0 0 44px color-mix(in srgb, var(--a1) 30%, transparent); }
+@property --spin { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes spin { to { --spin: 360deg; } }
+.orch .core {
+  width: 44px; height: 44px; border-radius: 14px; flex: none;
+  display: grid; place-items: center; color: #fff;
+  background: linear-gradient(135deg, var(--a1), var(--a2));
+}
+.orch b { display: block; font-size: 16.5px; font-weight: 700; line-height: 1.3; }
+.orch small { display: block; color: var(--muted); font-size: 13px; }
+
+.agents {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px;
+  margin-top: 96px;
+}
+.agent {
+  position: relative;
+  padding: 16px 14px 14px;
+  border-radius: 18px;
+  background: var(--card-solid);
+  border: 1px solid var(--line);
+  transition: border-color .25s, box-shadow .25s, transform .25s, opacity .25s;
+}
+.agent .ico {
+  width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
+  color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent);
+  margin-bottom: 10px;
+}
+.agent b { display: block; font-size: 15.5px; font-weight: 700; line-height: 1.3; }
+.agent small { display: block; color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+.agent .score {
+  position: absolute; top: 14px; right: 14px;
+  font-family: var(--mono); font-size: 12px; color: var(--c);
+  opacity: 0; transition: opacity .25s;
+}
+.agent.on { border-color: var(--c); box-shadow: 0 0 0 1px var(--c), 0 10px 40px color-mix(in srgb, var(--c) 22%, transparent); transform: translateY(-3px); }
+.agent.on .score { opacity: 1; }
+.agents.routed .agent:not(.on) { opacity: .45; }
+
+/* ---------- result ---------- */
+.result { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); border-top: 1px solid var(--line); }
+.answer { padding: 26px 28px 30px; min-height: 250px; }
+.answer .empty { color: var(--muted); margin: 0; }
+.answer .block + .block { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line); }
+.answer .from { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 650; color: var(--c); margin-bottom: 8px; }
+.answer .from::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
+.answer h3 { margin: 0 0 4px; font-size: 17px; font-weight: 700; letter-spacing: -0.02em; }
+.answer h3:not(:first-of-type) { margin-top: 16px; }
+.answer p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+.answer ul { margin: 0 0 10px; padding-left: 18px; font-size: 15px; }
+.answer li { margin-bottom: 4px; }
+.answer li::marker { color: var(--faint); }
+.answer a.more { font-size: 13.5px; font-weight: 650; color: var(--c); }
+.answer a.more:hover { text-decoration: underline; }
+.answer p a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+mark { background: color-mix(in srgb, var(--c-skill) 26%, transparent); color: var(--text); padding: 0 3px; border-radius: 4px; }
+
+.trace-box { border-left: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 55%, transparent); display: flex; flex-direction: column; }
+.trace-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.trace-head span:last-child { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+.trace { margin: 0; padding: 16px 20px 20px; font-family: var(--mono); font-size: 12.5px; line-height: 1.9; color: var(--muted); white-space: pre-wrap; flex: 1; }
+.trace b { color: var(--text); font-weight: 500; }
+.trace .tag { color: var(--c, var(--a2)); }
+.note { margin: 0; padding: 12px 28px 14px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--faint); }
+
+/* ---------- sections ---------- */
+section.sec { padding: 104px 0 0; }
+.sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.sec-head h2 { margin: 0; font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -0.04em; line-height: 1.2; font-weight: 750; }
+.sec-head p { margin: 0; color: var(--muted); max-width: 28em; text-align: right; font-size: 15px; }
+
+.card {
+  border: 1px solid var(--line); border-radius: 24px;
+  background: linear-gradient(180deg, var(--card), transparent 160%), var(--card-solid);
+  padding: 28px;
+}
+
+/* experience */
+.exp { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 36px; }
+.exp h3 { margin: 0; font-size: 24px; letter-spacing: -0.03em; font-weight: 750; }
+.exp .when { color: var(--c-exp); font-family: var(--mono); font-size: 13px; margin: 6px 0 14px; }
+.exp p { margin: 0 0 18px; color: var(--muted); }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.fact { border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+.fact b { display: block; font-size: 20px; letter-spacing: -0.03em; line-height: 1.25; }
+.fact span { display: block; color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+.exp ul { margin: 0; padding: 0; list-style: none; }
+.exp li { position: relative; padding: 13px 0 13px 26px; border-top: 1px solid var(--line); font-size: 15.5px; }
+.exp li:first-child { border-top: 0; padding-top: 2px; }
+.exp li::before { content: ""; position: absolute; left: 2px; top: 22px; width: 8px; height: 8px; border-radius: 50%; background: var(--c-exp); }
+.exp li:first-child::before { top: 11px; }
+
+/* projects */
+.bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.proj { grid-column: span 6; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.proj.wide { grid-column: span 7; }
+.proj.narrow { grid-column: span 5; }
+.proj.full { grid-column: span 12; }
+.proj::after {
+  content: ""; position: absolute; width: 320px; height: 320px; right: -140px; top: -170px; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c) 20%, transparent), transparent);
+  pointer-events: none;
+}
+.proj .metric { font-size: clamp(26px, 3vw, 36px); font-weight: 750; letter-spacing: -0.04em; line-height: 1.15; color: var(--c); }
+.proj .metric-label { color: var(--muted); font-size: 13.5px; margin: 4px 0 22px; }
+.proj h3 { margin: 0; font-size: 21px; letter-spacing: -0.03em; font-weight: 750; }
+.proj .one { margin: 4px 0 2px; color: var(--text); font-size: 15.5px; }
+.proj .meta { color: var(--faint); font-size: 13px; margin-bottom: 14px; }
+.proj ul { margin: 0 0 18px; padding-left: 18px; font-size: 15px; color: var(--muted); }
+.proj li { margin-bottom: 6px; }
+.proj li::marker { color: var(--c); }
+.proj .foot { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.tag-chip { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+.proj a.repo { margin-left: auto; font-size: 13.5px; font-weight: 650; color: var(--c); padding: 4px 0; }
+.proj a.repo:hover { text-decoration: underline; }
+.proj.full .body { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 36px; }
+.proj.full .metric-label { margin-bottom: 16px; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.skills .card { padding: 22px 24px; }
+.skills h3 { margin: 0 0 12px; font-size: 15px; color: var(--c-skill); font-weight: 650; }
+.skills .set { display: flex; flex-wrap: wrap; gap: 8px; }
+.skills .set span { font-size: 14px; border: 1px solid var(--line); background: var(--card); border-radius: 10px; padding: 6px 12px; }
+
+/* awards */
+.awards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; padding: 10px 28px; }
+.award { display: grid; grid-template-columns: 7.2em minmax(0, 1fr); gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.award:nth-last-child(-n+2) { border-bottom: 0; }
+.award time { font-family: var(--mono); font-size: 12.5px; color: var(--c-award); padding-top: 3px; }
+.award b { display: block; font-weight: 650; line-height: 1.4; }
+.award span { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+
+/* contact */
+.contact { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 40px; position: relative; overflow: hidden; }
+.contact::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(600px 240px at 100% 0%, var(--glow-1), transparent 70%), radial-gradient(500px 240px at 0% 100%, var(--glow-2), transparent 70%);
+}
+.contact h3 { margin: 0 0 6px; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.035em; font-weight: 750; }
+.contact p { margin: 0; color: var(--muted); }
+.contact .btns { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 14px; font-weight: 650; font-size: 15px; white-space: nowrap; }
+.btn.primary { color: #fff; background: linear-gradient(135deg, var(--a1), color-mix(in srgb, var(--a1) 45%, var(--a2))); }
+.btn.ghost { border: 1px solid var(--line-strong); }
+
+footer { padding: 56px 0 48px; color: var(--faint); font-size: 13.5px; text-align: center; }
+
+@media (max-width: 900px) {
+  .links a:not(.gh) { display: none; }
+  .hero { padding-top: 56px; }
+  .console { border-radius: 22px; margin-top: 36px; }
+  .graph { padding: 22px 12px 22px; }
+  .bar { padding-left: 14px; border-radius: 16px; }
+  .bar button { padding: 10px 14px; }
+  .chips { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; margin-right: -12px; padding-right: 12px; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips button { flex: none; }
+  .orch-row { margin-top: 44px; }
+  .agents { gap: 6px; margin-top: 72px; }
+  .agent { padding: 10px 4px 9px; border-radius: 14px; text-align: center; }
+  .agent .ico { width: 28px; height: 28px; border-radius: 9px; margin: 0 auto 6px; }
+  .agent b { font-size: 11.5px; white-space: nowrap; letter-spacing: -0.03em; }
+  .agent small { display: none; }
+  .agent .score { position: static; display: block; margin-top: 2px; font-size: 10.5px; height: 14px; }
+  .result { grid-template-columns: minmax(0, 1fr); }
+  .trace-box { border-left: 0; border-top: 1px solid var(--line); }
+  .answer { padding: 22px 18px 24px; min-height: 0; }
+  .note { padding: 12px 18px 14px; }
+  section.sec { padding-top: 72px; }
+  .sec-head { flex-direction: column; align-items: flex-start; gap: 6px; margin-bottom: 20px; }
+  .sec-head p { text-align: left; }
+  .card { padding: 22px; border-radius: 20px; }
+  .exp { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .proj, .proj.wide, .proj.narrow, .proj.full { grid-column: span 12; }
+  .proj.full .body { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .skills { grid-template-columns: minmax(0, 1fr); }
+  .awards { grid-template-columns: minmax(0, 1fr); padding: 6px 22px; }
+  .award:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+  .contact { flex-direction: column; align-items: flex-start; padding: 28px 22px; }
+}
+@media (max-width: 420px) {
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .award { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wire-beam, .agent { transition: none; }
+  .orch.busy::before { animation: none; }
+}
+
+/* ---------- visual refresh: clean editorial portfolio ---------- */
+:root {
+  color-scheme: light;
+  --bg: #f7f8fa;
+  --bg-2: #eef1f5;
+  --card: #ffffff;
+  --card-solid: #ffffff;
+  --line: #e5e8ee;
+  --line-strong: #d4dae4;
+  --text: #172033;
+  --muted: #657087;
+  --faint: #929bad;
+  --a1: #315ee8;
+  --a2: #19a6a0;
+  --c-exp: #315ee8;
+  --c-proj: #14968f;
+  --c-skill: #b17b22;
+  --c-award: #7656c9;
+  --c-contact: #315ee8;
+  --glow-1: rgba(49, 94, 232, .07);
+  --glow-2: rgba(20, 150, 143, .05);
+  --shadow: 0 16px 44px rgba(25, 39, 68, .07);
+}
+:root[data-theme="dark"] {
+  color-scheme: light;
+  --bg: #f7f8fa;
+  --bg-2: #eef1f5;
+  --card: #ffffff;
+  --card-solid: #ffffff;
+  --line: #e5e8ee;
+  --line-strong: #d4dae4;
+  --text: #172033;
+  --muted: #657087;
+  --faint: #929bad;
+  --a1: #315ee8;
+  --a2: #19a6a0;
+  --c-exp: #315ee8;
+  --c-proj: #14968f;
+  --c-skill: #b17b22;
+  --c-award: #7656c9;
+  --c-contact: #315ee8;
+  --glow-1: rgba(49, 94, 232, .07);
+  --glow-2: rgba(20, 150, 143, .05);
+  --shadow: 0 16px 44px rgba(25, 39, 68, .07);
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  letter-spacing: -.025em;
+}
+body::before {
+  background:
+    radial-gradient(760px 420px at 5% 0%, rgba(49,94,232,.055), transparent 68%),
+    var(--bg);
+}
+.wrap { max-width: 1120px; padding-left: 28px; padding-right: 28px; }
+.nav {
+  background: rgba(247,248,250,.88);
+  border-bottom-color: rgba(220,225,234,.85);
+  backdrop-filter: saturate(140%) blur(18px);
+}
+.nav .wrap { height: 68px; }
+.brand { font-size: 15px; letter-spacing: -.035em; }
+.brand i {
+  width: 9px; height: 9px;
+  background: var(--a1);
+  box-shadow: none;
+}
+.brand span { color: #7d8799; font-size: 13px; }
+.links { gap: 2px; }
+.links a {
+  padding: 8px 11px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #69748a;
+}
+.links a:hover { color: var(--text); background: #edf0f5; }
+.links a.gh {
+  color: var(--text);
+  border-color: var(--line-strong);
+  border-radius: 8px;
+}
+.hero {
+  padding: 100px 0 22px;
+  text-align: left;
+}
+.hero h1 {
+  max-width: 14em;
+  margin: 0 0 18px;
+  font-size: clamp(38px, 5.8vw, 66px);
+  line-height: 1.12;
+  letter-spacing: -.065em;
+  font-weight: 780;
+}
+.hero > p {
+  max-width: 39em;
+  margin: 0;
+  color: #68748a;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.console {
+  margin-top: 48px;
+  border: 1px solid #e3e7ee;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(30,45,75,.075);
+}
+.graph {
+  padding: 34px 32px 32px;
+  background: #fbfcfe;
+}
+.graph::before { display: none; }
+.wire-base { stroke: #dce2ec; stroke-width: 1.4; }
+.wire-beam { stroke-width: 2.2; filter: none; }
+.comet { fill: #315ee8; filter: none; }
+.bar {
+  padding: 6px 7px 6px 16px;
+  border-radius: 12px;
+  border-color: #dce2eb;
+  background: #fff;
+}
+.bar:focus-within {
+  border-color: #8aa4f5;
+  box-shadow: 0 0 0 3px rgba(49,94,232,.09);
+}
+.bar input { font-size: 15.5px; }
+.bar button {
+  border-radius: 9px;
+  padding: 10px 17px;
+  background: var(--a1);
+  font-size: 14px;
+}
+.chips { justify-content: flex-start; gap: 7px; margin-top: 12px; }
+.chips button {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+  background: #fff;
+  border-color: #e5e8ef;
+}
+.chips button:hover { border-color: #aab9e8; color: var(--a1); }
+.orch-row { margin-top: 48px; }
+.orch {
+  gap: 12px;
+  padding: 11px 18px 11px 11px;
+  border-radius: 13px;
+  background: #fff;
+  border-color: #dce2eb;
+  box-shadow: 0 5px 18px rgba(30,45,75,.045);
+}
+.orch::before { display: none; }
+.orch.busy, .orch.done {
+  border-color: #aab9e8;
+  box-shadow: 0 0 0 3px rgba(49,94,232,.07);
+}
+.orch .core {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: #315ee8;
+}
+.orch b { font-size: 14.5px; }
+.orch small { font-size: 12px; }
+.agents {
+  gap: 10px;
+  margin-top: 78px;
+}
+.agent {
+  padding: 15px 14px 13px;
+  border-radius: 12px;
+  background: #fff;
+  border-color: #e5e8ef;
+  box-shadow: 0 3px 12px rgba(30,45,75,.025);
+}
+.agent .ico {
+  width: 32px; height: 32px;
+  border-radius: 9px;
+  margin-bottom: 9px;
+}
+.agent b { font-size: 14px; }
+.agent small { font-size: 12px; }
+.agent.on {
+  border-color: var(--c);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--c) 12%, transparent);
+  transform: translateY(-2px);
+}
+.result { background: #fff; }
+.answer { padding: 26px 30px 30px; }
+.answer .empty { color: #8993a5; }
+.answer .block + .block { border-top-color: #edf0f4; }
+.answer .from { font-size: 11.5px; letter-spacing: .01em; }
+.answer .from::before { box-shadow: none; }
+.answer h3 { font-size: 16px; }
+.answer p, .answer ul { font-size: 14px; line-height: 1.8; }
+.answer a.more { font-size: 12.5px; }
+.trace-box {
+  background: #f8f9fb;
+  border-left-color: #e8ebf1;
+}
+.trace-head {
+  padding: 14px 20px;
+  color: #69748a;
+  font-size: 12px;
+}
+.trace { font-size: 11.5px; color: #7b8598; }
+.trace b { color: #35415a; }
+.note {
+  background: #fff;
+  color: #929bad;
+  font-size: 11.5px;
+}
+section.sec { padding: 112px 0 0; }
+.sec-head { margin-bottom: 24px; }
+.sec-head h2 {
+  font-size: clamp(27px, 3vw, 35px);
+  letter-spacing: -.055em;
+}
+.sec-head p { color: #7a8497; font-size: 14px; }
+.card {
+  border: 1px solid #e5e8ee;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 22px rgba(30,45,75,.035);
+  padding: 28px;
+}
+.exp { gap: 42px; }
+.exp h3 { font-size: 22px; letter-spacing: -.045em; }
+.exp .when {
+  color: var(--a1);
+  font-size: 12px;
+  letter-spacing: -.01em;
+}
+.exp p { color: #6f7a8e; font-size: 14.5px; }
+.fact {
+  border: 1px solid #edf0f4;
+  border-radius: 11px;
+  background: #fafbfd;
+  padding: 13px;
+}
+.fact b { font-size: 18px; }
+.fact span { color: #7b8598; font-size: 11.5px; }
+.exp li {
+  border-top-color: #edf0f4;
+  color: #4f5b70;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.exp li::before { width: 6px; height: 6px; }
+.bento { gap: 14px; }
+.proj {
+  border-radius: 16px;
+  box-shadow: 0 5px 22px rgba(30,45,75,.035);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.proj:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 30px rgba(30,45,75,.075);
+  border-color: #d4dbe7;
+}
+.proj::after { opacity: .45; }
+.proj .metric {
+  font-size: clamp(25px, 2.8vw, 33px);
+  letter-spacing: -.055em;
+}
+.proj .metric-label { font-size: 12px; margin-bottom: 20px; }
+.proj h3 { font-size: 20px; letter-spacing: -.045em; }
+.proj .one { font-size: 14.5px; line-height: 1.65; }
+.proj .meta { color: #929bad; font-size: 11.5px; }
+.proj ul {
+  color: #657087;
+  font-size: 13.5px;
+  line-height: 1.8;
+}
+.tag-chip {
+  border-color: #e7eaf0;
+  background: #fafbfd;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+.proj a.repo { font-size: 12.5px; }
+.skills { gap: 14px; }
+.skills .card { padding: 22px 24px; }
+.skills h3 {
+  color: #46536b;
+  font-size: 13px;
+  letter-spacing: -.01em;
+}
+.skills .set { gap: 7px; }
+.skills .set span {
+  border-color: #e8ebf1;
+  background: #fafbfd;
+  border-radius: 7px;
+  padding: 6px 10px;
+  color: #536078;
+  font-size: 12.5px;
+}
+.awards { padding: 10px 28px; }
+.award { border-bottom-color: #edf0f4; }
+.award time { color: #7656c9; font-size: 11.5px; }
+.award b { font-size: 14px; }
+.award span { color: #7a8497; font-size: 12.5px; }
+.contact {
+  padding: 38px 40px;
+  background: #f0f3fa;
+  border-color: #e3e8f2;
+}
+.contact::after { opacity: .55; }
+.contact h3 {
+  font-size: clamp(22px, 2.5vw, 28px);
+  letter-spacing: -.05em;
+}
+.contact p { color: #68748a; font-size: 14px; }
+.btn {
+  border-radius: 9px;
+  padding: 11px 16px;
+  font-size: 13px;
+}
+.btn.primary { background: #315ee8; }
+.btn.ghost { border-color: #d4dbe7; background: rgba(255,255,255,.6); }
+footer { color: #9aa3b2; font-size: 12px; padding: 48px 0 40px; }
+
+@media (max-width: 900px) {
+  .hero { padding-top: 68px; }
+  .graph { padding: 24px 18px; }
+  .agents { gap: 7px; margin-top: 68px; }
+  .agent { padding: 11px 5px 9px; }
+  .agent b { font-size: 11px; }
+  .answer { padding: 22px 20px 24px; }
+  .trace-box { border-top-color: #e8ebf1; }
+  section.sec { padding-top: 78px; }
+  .card { padding: 23px; }
+  .exp { gap: 24px; }
+  .awards { padding: 6px 22px; }
+  .contact { padding: 28px 24px; }
+}
+@media (max-width: 600px) {
+  .wrap { padding-left: 18px; padding-right: 18px; }
+  .nav .wrap { height: 60px; }
+  .hero { padding-top: 54px; }
+  .hero h1 { font-size: clamp(34px, 9vw, 46px); }
+  .hero > p { font-size: 15px; }
+  .console { margin-top: 32px; border-radius: 14px; }
+  .graph { padding: 18px 12px; }
+  .bar { gap: 5px; padding-left: 10px; }
+  .bar input { font-size: 14px; }
+  .bar button { padding: 10px 12px; font-size: 13px; }
+  .chips { margin-right: -12px; }
+  .orch-row { margin-top: 38px; }
+  .agents { margin-top: 58px; }
+  .agent .ico { width: 27px; height: 27px; }
+  .agent b { font-size: 10.5px; }
+  .sec-head h2 { font-size: 28px; }
+  .sec-head p { font-size: 13px; }
+  .card { padding: 20px; border-radius: 13px; }
+  .proj .metric { font-size: 28px; }
+  .awards { padding: 6px 20px; }
+  .contact { padding: 24px 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><i></i>윤지석 <span>AX 개발자</span></a>
+    <nav class="links" aria-label="섹션 이동">
+      <a href="#experience">경력</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#skills">기술</a>
+      <a href="#awards">수상과 활동</a>
+      <a href="#contact">연락</a>
+      <a class="gh" id="nav-gh" href="#" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <h1>현업의 말을 시스템이 알아듣게 만듭니다</h1>
+      <p>업무를 직접 따라가 보고, 흩어진 시스템을 잇고, 그 위에 에이전트를 올립니다. 궁금한 것을 적으면 오케스트레이터가 알맞은 에이전트에게 보내 답을 가져옵니다.</p>
+
+      <div class="console">
+        <div class="graph" id="graph">
+          <svg class="wires" id="wires" aria-hidden="true"></svg>
+
+          <form class="prompt" id="ask" autocomplete="off">
+            <label for="q">무엇이 궁금하세요?</label>
+            <div class="bar" id="bar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input id="q" name="q" type="text" placeholder="RAG 챗봇을 만들어 본 적 있나요?" maxlength="120">
+              <button type="submit" id="send">보내기</button>
+            </div>
+            <div class="chips" id="chips"></div>
+          </form>
+
+          <div class="orch-row">
+            <div class="orch" id="orch">
+              <div class="core" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3.5 3.5M15.5 15.5 19 19M19 5l-3.5 3.5M8.5 15.5 5 19"/></svg>
+              </div>
+              <div><b>오케스트레이터</b><small id="orch-state">상위 모델, 대기 중</small></div>
+            </div>
+          </div>
+
+          <div class="agents" id="agents"></div>
+        </div>
+
+        <div class="result">
+          <div class="answer" id="answer" aria-live="polite">
+            <p class="empty">아직 받은 질문이 없습니다. 위에 질문을 적거나 예시를 눌러 보세요.</p>
+          </div>
+          <div class="trace-box">
+            <div class="trace-head"><span>라우팅 기록</span><span id="clock">대기</span></div>
+            <pre class="trace" id="trace" aria-live="polite">질문을 보내면 처리 과정이 여기에 기록됩니다.</pre>
+          </div>
+        </div>
+        <p class="note">이 시연은 브라우저 안에서 규칙 기반 라우터로 동작하며 실제 모델을 호출하지 않습니다. 인턴 때 만든 구조를 본떴습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec" id="experience">
+    <div class="wrap">
+      <div class="sec-head"><h2>경력</h2><p>인사 담당자의 업무를 하나씩 따라가 본 뒤에 설계를 시작했습니다.</p></div>
+      <div id="exp-list"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="projects">
+    <div class="wrap">
+      <div class="sec-head"><h2>프로젝트</h2><p>막히면 모델을 바꾸기 전에 데이터와 로그부터 다시 봤습니다.</p></div>
+      <div class="bento" id="proj-list"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="skills">
+    <div class="wrap">
+      <div class="sec-head"><h2>기술</h2><p>프로젝트에서 직접 써 본 것만 적었습니다.</p></div>
+      <div class="skills" id="skill-list"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="awards">
+    <div class="wrap">
+      <div class="sec-head"><h2>수상과 활동</h2><p>아는 것은 먼저 나누는 편입니다. 조교와 멘토링을 오래 했습니다.</p></div>
+      <div class="card awards" id="award-list"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="card contact">
+        <div>
+          <h3>코드로 확인해 보세요</h3>
+          <p>프로젝트 저장소와 커밋 기록은 GitHub에 있습니다.</p>
+        </div>
+        <div class="btns" id="contact-btns"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap"><footer>윤지석의 포트폴리오</footer></div>
+
+<script>
+/* =========================================================
+   1. 내용: 여기만 고치면 페이지 전체와 에이전트 응답이 함께 바뀝니다.
+   ========================================================= */
+const PROFILE = {
+  github: "https://github.com/yoonjiseok",
+  email: ""            // 공개하려면 주소를 적으세요. 비워 두면 표시하지 않습니다.
+};
+
+const EXPERIENCE = [{
+  title: "NHN AX 개발팀 인턴",
+  when: "2026.07 ~ 2026.10",
+  body: "인사 부서의 실제 업무를 분석해 AI 서비스로 만들고 사내 상용 환경에 배포했습니다.",
+  facts: [["40~70명", "인사 담당자 사용"], ["MCP", "사내 AI와 업무 기능 연동"], ["온톨로지", "도메인 지식 구조화"]],
+  points: [
+    "퇴직, 수습, 채용, 인수인계처럼 업무별로 기능을 나눠 설계하고 개발",
+    "업무 도메인의 지식을 온톨로지 형태로 구조화하고, 여러 부서가 함께 쓸 수 있는 범용 AI 파이프라인으로 일반화",
+    "만든 업무 기능을 MCP 서버로 묶어 사내 AI와 연동. 담당자가 자연어로 요청하면 필요한 기능이 실행되도록 구현",
+    "외부 시스템 API 호출을 한 계층으로 모으고 호출 제한, 큐잉, 캐싱을 적용해 중복 호출을 줄임",
+    "IT 배경이 없는 현업 담당자, 데이터를 가진 유관 부서와 요구사항을 조율"
+  ]
+}];
+
+const PROJECTS = [
+  {
+    id: "retriever", title: "Retriever", size: "wide", color: "var(--c-award)",
+    metric: "0.58 → 0.81", metricLabel: "클러스터링 실루엣 점수",
+    one: "마약 홍보 게시글을 묶어 유통 패턴을 분석하는 서비스",
+    meta: "2025.06 ~ 2025.11, AI 파트 2명 중 클러스터링 모듈 전담",
+    points: [
+      "KoBERT 임베딩과 코사인 유사도로 시작해 0.58. 가격 정보와 TF-IDF, UMAP을 더해 0.65까지 올렸고 이 결과로 후원기업상 수상",
+      "SK AI Summit 발표를 준비하며 원문을 다시 읽어, 게시글 대부분이 키워드만 바꾼 템플릿이라는 점을 발견",
+      "3-gram Jaccard 유사도로 거리 행렬을 다시 설계해 0.81로 개선. KoBERT와 UMAP 단계가 빠지면서 계산 자원과 처리 시간도 함께 감소"
+    ],
+    stack: ["Python", "FastAPI", "KoBERT", "HDBSCAN", "UMAP", "MongoDB"],
+    repo: "https://github.com/yoonjiseok/Retriever-FastAPI",
+    keys: ["retriever", "리트리버", "클러스터링", "마약", "hdbscan", "kobert", "jaccard", "실루엣", "임베딩", "데이터 분석"]
+  },
+  {
+    id: "fourka", title: "Fourka", size: "narrow", color: "var(--c-proj)",
+    metric: "10초 → 1초 미만", metricLabel: "반복 질문 응답 시간",
+    one: "사내 규정과 매뉴얼에 근거해 답하는 RAG 챗봇",
+    meta: "2025.07 ~ 2025.08, AI 파트 4명, AI 파트 리더",
+    points: [
+      "폐기된 옛 규정이 최신 규정과 함께 검색되는 문제를 청크별 가중치와 Airflow 배치로 해결",
+      "근거가 없거나 확신이 낮은 질문은 관리자에게 넘기는 Human-in-the-Loop 분기를 LangGraph로 설계",
+      "FAQ 유사도를 먼저 비교하는 계층을 두어 반복 질문 응답을 단축"
+    ],
+    stack: ["LangGraph", "LangChain", "ChromaDB", "Redis", "Airflow", "Kubernetes"],
+    repo: "",
+    keys: ["fourka", "포카", "rag", "챗봇", "규정", "langgraph", "langchain", "human-in-the-loop", "airflow", "chromadb", "리더", "사내 문서"]
+  },
+  {
+    id: "playus", title: "PlayUS", size: "narrow", color: "var(--c-skill)",
+    metric: "30초 → 2~9초", metricLabel: "Text-to-SQL 챗봇 응답 시간",
+    one: "KBO 팬끼리 직관 메이트를 찾는 커뮤니티 서비스",
+    meta: "2025.03 ~ 2025.06, AI 파트 단독",
+    points: [
+      "KBO 기록 크롤링과 DB 설계, 자연어 질문을 SQL로 바꾸는 챗봇 구현",
+      "GPU를 나눠 쓰는 환경에서 모델 교체, 8-bit 양자화, Few-shot SQL 예시로 응답 시간 단축",
+      "비속어 탐지는 정규표현식으로 먼저 거른 뒤 모델을 쓰게 바꿔 약 5초에서 1초 이내로 단축"
+    ],
+    stack: ["FastAPI", "LangGraph", "Llama 3.1 8B", "XGBoost", "MySQL"],
+    repo: "https://github.com/yoonjiseok/PlayUs-AI",
+    keys: ["playus", "플레이어스", "kbo", "야구", "text-to-sql", "sql", "llama", "양자화", "크롤링", "비속어"]
+  },
+  {
+    id: "moveon", title: "MoveOn", size: "wide", color: "var(--c-exp)",
+    metric: "백엔드와 인프라 단독", metricLabel: "API 설계부터 배포, 모니터링까지",
+    one: "달린 경로로 땅을 점령하는 위치 기반 러닝 게임 앱",
+    meta: "2024.07 ~ 2025.06, 3명, 팀장",
+    points: [
+      "Spring Boot로 전체 REST API를 설계하고 JPA, QueryDSL로 데이터 접근 계층 구현",
+      "STOMP WebSocket으로 1:1 실시간 땅따먹기 대전 구현",
+      "GitHub Actions와 Docker로 AWS EC2 자동 배포. DB 인증 파일은 Secret으로 관리",
+      "Prometheus와 Grafana를 별도 인스턴스에 두고, 사용률이 80%를 넘으면 Slack으로 알림"
+    ],
+    stack: ["Java", "Spring Boot", "JPA", "QueryDSL", "Oracle DB", "AWS EC2", "Docker", "GitHub Actions"],
+    repo: "https://github.com/yoonjiseok/MoveOn_BE",
+    keys: ["moveon", "무브온", "러닝", "spring", "스프링", "java", "자바", "websocket", "웹소켓", "백엔드", "배포", "모니터링", "grafana", "prometheus", "팀장", "ci/cd"]
+  },
+
+];
+
+const SKILLS = [
+  ["AI와 에이전트", "LangChain, LangGraph, RAG, MCP, Hugging Face, Llama, Gemma, KoBERT, HDBSCAN, UMAP, XGBoost"],
+  ["백엔드", "Python, Java, FastAPI, Spring Boot, Spring Data JPA, QueryDSL, SQLAlchemy"],
+  ["데이터베이스", "MySQL, PostgreSQL(pgvector), MongoDB, ChromaDB, Redis, Oracle DB"],
+  ["인프라와 운영", "AWS EC2, S3, Docker, Kubernetes, GitHub Actions, Airflow, Redpanda, Prometheus, Grafana"]
+];
+
+const AWARDS = [
+  { when: "2025.11", title: "2025 SK AI Summit 대학생 부스 발표", body: "Retriever의 클러스터링 개선 과정 발표" },
+  { when: "2025.08", title: "SW중심대학 디지털 경진대회 후원기업상", body: "한글과컴퓨터" },
+  { when: "2025.06", title: "SQLD", body: "한국데이터산업진흥원" },
+  { when: "2025.03 ~ 08", title: "SW 아카데미 수료, AI 파트 리더", body: "656시간 과정. PlayUS와 Fourka를 이 과정에서 개발" },
+  { when: "2024.12", title: "공개SW 개발자대회 후원기업 대표상", body: "오에스비씨. ESP32 기반 CSI 데이터 수집 파이프라인" },
+  { when: "2024.09 ~ 12", title: "UMC 7기 백엔드 파트", body: "Spring Boot 스터디와 팀 프로젝트" },
+  { when: "2024.07 ~ 25.07", title: "학부연구생, WiFi Sensing 연구", body: "한국통신학회 동계 학술대회 논문 투고" },
+  { when: "재학 중", title: "조교 3회와 고등학생 AI/SW 멘토링", body: "문제해결기법(C언어) 2회, 사물인터넷 개론 1회" }
+];
+
+const EXAMPLES = [
+  "RAG 챗봇을 만들어 본 적 있나요?",
+  "성능을 개선한 경험을 알려 주세요",
+  "인턴 때 무슨 일을 했나요?",
+  "Spring으로 만든 서비스는?",
+  "수상 이력과 연락처"
+];
+
+/* =========================================================
+   2. 에이전트 정의
+   ========================================================= */
+const ICON = {
+  experience: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+  projects: '<path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/>',
+  skills: '<path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/>',
+  awards: '<circle cx="12" cy="8" r="6"/><path d="M15.5 12.9 17 22l-5-3-5 3 1.5-9.1"/>',
+  contact: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>'
+};
+const AGENTS = [
+  { id: "experience", name: "경력", desc: "인턴과 실무", color: "var(--c-exp)", anchor: "#experience",
+    keys: ["인턴", "경력", "회사", "실무", "nhn", "ax", "업무", "온톨로지", "mcp", "현업", "인사", "파이프라인", "일했", "재직", "에이전트", "소개", "누구", "강점"] },
+  { id: "projects", name: "프로젝트", desc: "만든 것과 개선", color: "var(--c-proj)", anchor: "#projects",
+    keys: ["프로젝트", "만든", "만들", "개발한", "서비스", "성능", "개선", "최적화", "빠르게", "경험", "사례", "포트폴리오"] },
+  { id: "skills", name: "기술", desc: "써 본 스택", color: "var(--c-skill)", anchor: "#skills",
+    keys: ["기술", "스택", "언어", "다룰", "할 줄", "쓸 줄", "프레임워크", "도구"] },
+  { id: "awards", name: "수상", desc: "수상과 활동", color: "var(--c-award)", anchor: "#awards",
+    keys: ["수상", "후원기업상", "대표상", "대회", "발표", "summit", "조교", "멘토", "동아리", "umc", "논문", "자격증", "sqld", "활동", "아카데미", "이력"] },
+  { id: "contact", name: "연락", desc: "GitHub와 메일", color: "var(--c-contact)", anchor: "#contact",
+    keys: ["연락", "이메일", "메일", "github", "깃허브", "채용", "면접", "제안", "컨택", "코드"] }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const bare = t => t.replace(/\(.*?\)/g, "").trim().toLowerCase();
+const techList = SKILLS.flatMap(([, v]) => v.split(/,\s*/).map(bare)).filter(t => t.length > 1);
+const ALIAS = { "쿠버네티스": "kubernetes", "도커": "docker", "스프링": "spring", "파이썬": "python", "자바": "java", "레디스": "redis", "랭그래프": "langgraph", "랭체인": "langchain", "깃허브 액션": "github actions" };
+
+/* 오케스트레이터: 질문을 읽고 담당과 근거를 정합니다. */
+function route(query) {
+  let q = query.toLowerCase();
+  for (const k in ALIAS) if (q.includes(k)) q += " " + ALIAS[k];
+  const hits = {}, reasons = {};
+  const add = (id, word, w = 1) => {
+    hits[id] = (hits[id] || 0) + w;
+    (reasons[id] = reasons[id] || new Set()).add(word);
+  };
+  AGENTS.forEach(a => a.keys.forEach(k => { if (q.includes(k)) add(a.id, k); }));
+
+  const matched = PROJECTS
+    .map(p => ({ p, n: p.keys.filter(k => q.includes(k)) }))
+    .filter(x => x.n.length)
+    .sort((a, b) => b.n.length - a.n.length);
+  matched.forEach(x => x.n.forEach(k => add("projects", k, 1.5)));
+
+  const head = t => t.includes(" ") && t.split(" ")[0].length > 2 ? t.split(" ")[0] : null;
+  const matchedTech = techList.filter(t => q.includes(t) || (head(t) && q.includes(head(t))));
+  matchedTech.forEach(t => add("skills", t));
+
+  const total = Object.values(hits).reduce((a, b) => a + b, 0);
+  const picked = Object.entries(hits)
+    .map(([id, n]) => ({ agent: AGENTS.find(a => a.id === id), score: n / total, why: [...reasons[id]] }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+  return { picked, matchedProjects: matched.map(x => x.p), matchedTech };
+}
+
+/* 서브 에이전트: 각자 맡은 내용에서 답을 만듭니다. */
+const WORKERS = {
+  experience() {
+    const e = EXPERIENCE[0];
+    return {
+      log: "경력 1건",
+      html: `<h3>${esc(e.title)}</h3><p>${esc(e.body)} 인사 담당자 40~70명이 사용했습니다.</p><ul>${e.points.slice(0, 3).map(x => `<li>${esc(x)}</li>`).join("")}</ul>`
+    };
+  },
+  projects(ctx) {
+    const perf = /성능|개선|최적화|빠르게/.test(ctx.query);
+    let list = ctx.matchedProjects;
+    if (!list.length) list = perf ? PROJECTS.filter(p => ["fourka", "playus", "retriever"].includes(p.id)) : PROJECTS.slice(0, 3);
+    list = list.slice(0, 3);
+    return {
+      log: `${list.map(p => p.title).join(", ")} ${list.length}건`,
+      html: list.map(p => `<h3>${esc(p.title)}</h3><p>${esc(p.one)}</p>${p.metric.includes("→") ? `<p><strong style="color:var(--text)">${esc(p.metric)}</strong> ${esc(p.metricLabel)}</p>` : ""}<ul>${(perf ? p.points.slice(-2) : p.points.slice(0, 2)).map(x => `<li>${esc(x)}</li>`).join("")}</ul>`).join("")
+    };
+  },
+  skills(ctx) {
+    const has = ctx.matchedTech.length > 0;
+    const mark = v => v.split(/,\s*/).map(t => has && ctx.matchedTech.includes(bare(t)) ? `<mark>${esc(t)}</mark>` : esc(t)).join(", ");
+    const rows = has ? SKILLS.filter(([, v]) => ctx.matchedTech.some(t => v.toLowerCase().includes(t))) : SKILLS;
+    const used = has ? PROJECTS.filter(p => ctx.matchedTech.some(t => p.stack.join(", ").toLowerCase().includes(t))).map(p => p.title) : [];
+    return {
+      log: has ? `${ctx.matchedTech.join(", ")} 사용 이력 조회` : "기술 목록 전체",
+      html: `<ul>${rows.map(([k, v]) => `<li><strong>${esc(k)}</strong> ${mark(v)}</li>`).join("")}</ul>` +
+            (used.length ? `<p>이 기술을 쓴 프로젝트: ${esc(used.join(", "))}</p>` : "")
+    };
+  },
+  awards() {
+    const top = AWARDS.slice(0, 4);
+    return {
+      log: `수상과 활동 ${AWARDS.length}건 중 ${top.length}건`,
+      html: `<ul>${top.map(a => `<li><strong>${esc(a.title)}</strong> (${esc(a.when)})</li>`).join("")}</ul>`
+    };
+  },
+  contact() {
+    return {
+      log: "연락 수단 조회",
+      html: `<p>코드와 커밋 기록은 <a href="${esc(PROFILE.github)}" target="_blank" rel="noopener">${esc(PROFILE.github.replace("https://", ""))}</a>에 있습니다.</p>` +
+            (PROFILE.email ? `<p>메일은 <a href="mailto:${esc(PROFILE.email)}">${esc(PROFILE.email)}</a>로 보내 주세요.</p>` : "")
+    };
+  }
+};
+
+/* =========================================================
+   3. 그래프: 입력창 → 오케스트레이터 → 서브 에이전트
+   ========================================================= */
+const $ = id => document.getElementById(id);
+const graph = $("graph"), wires = $("wires"), bar = $("bar"), orch = $("orch"), agentsEl = $("agents");
+const NS = "http://www.w3.org/2000/svg";
+const svgEl = (tag, attrs) => { const n = document.createElementNS(NS, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); wires.appendChild(n); return n; };
+
+agentsEl.innerHTML = AGENTS.map(a => `
+  <div class="agent" id="agent-${a.id}" style="--c:${a.color}">
+    <span class="score" id="score-${a.id}"></span>
+    <div class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[a.id]}</svg></div>
+    <b>${esc(a.name)}</b><small>${esc(a.desc)}</small>
+  </div>`).join("");
+
+const W = { in: {}, out: {} };
+W.in.base = svgEl("path", { class: "wire-base" });
+W.in.beam = svgEl("path", { class: "wire-beam", pathLength: 1 });
+AGENTS.forEach(a => {
+  W.out[a.id] = {
+    base: svgEl("path", { class: "wire-base" }),
+    beam: svgEl("path", { class: "wire-beam", pathLength: 1, style: `--c:${a.color}` })
+  };
+});
+
+function drawWires() {
+  const g = graph.getBoundingClientRect();
+  if (!g.width) return;
+  wires.setAttribute("viewBox", `0 0 ${g.width} ${g.height}`);
+  const at = (node, side) => {
+    const r = node.getBoundingClientRect();
+    return { x: r.left - g.left + r.width / 2, y: (side === "top" ? r.top : r.bottom) - g.top };
+  };
+  const set = (w, d) => { w.base.setAttribute("d", d); w.beam.setAttribute("d", d); };
+  const chipsBottom = $("chips").getBoundingClientRect().bottom - g.top;
+  const b = at(orch, "top");
+  set(W.in, `M${b.x},${chipsBottom + 8} L${b.x},${b.y}`);
+  const o = at(orch, "bottom");
+  AGENTS.forEach(a => {
+    const t = at($("agent-" + a.id), "top"), m = (o.y + t.y) / 2;
+    set(W.out[a.id], `M${o.x},${o.y} C${o.x},${m} ${t.x},${m} ${t.x},${t.y}`);
+  });
+}
+
+/* =========================================================
+   4. 실행
+   ========================================================= */
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const sleep = ms => new Promise(r => setTimeout(r, reduce ? 0 : ms));
+const trace = $("trace"), answer = $("answer"), sendBtn = $("send"), input = $("q"), clock = $("clock"), orchState = $("orch-state");
+
+function comet(path, color, ms) {
+  if (reduce) return Promise.resolve();
+  return new Promise(done => {
+    const dot = svgEl("circle", { class: "comet", r: 4, style: `--c:${color}` });
+    const len = path.getTotalLength(), t0 = performance.now();
+    (function step(now) {
+      const t = Math.min(1, Math.max(0, (now - t0) / ms));
+      const e = t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      const p = path.getPointAtLength(len * e);
+      dot.setAttribute("cx", p.x); dot.setAttribute("cy", p.y);
+      if (t < 1) requestAnimationFrame(step); else { dot.remove(); done(); }
+    })(t0);
+  });
+}
+function reset() {
+  wires.querySelectorAll(".on").forEach(n => n.classList.remove("on"));
+  wires.querySelectorAll(".comet").forEach(n => n.remove());
+  agentsEl.classList.remove("routed");
+  agentsEl.querySelectorAll(".agent").forEach(n => n.classList.remove("on"));
+  agentsEl.querySelectorAll(".score").forEach(n => n.textContent = "");
+  orch.classList.remove("busy", "done");
+}
+function log(html) { trace.innerHTML += (trace.dataset.started ? "\n" : "") + html; trace.dataset.started = "1"; }
+const elapsed = t0 => Math.round(performance.now() - t0) + "ms";
+
+let running = false;
+async function run(query) {
+  query = query.trim();
+  if (!query || running) return;
+  running = true; sendBtn.disabled = true;
+  const t0 = performance.now();
+  reset(); drawWires();
+  trace.innerHTML = ""; delete trace.dataset.started;
+  clock.textContent = "처리 중";
+  answer.innerHTML = `<p class="empty">에이전트에게 보내는 중입니다.</p>`;
+
+  try {
+    log(`<b>입력</b>  “${esc(query)}”`);
+    W.in.beam.classList.add("on");
+    await comet(W.in.beam, "var(--a1)", 420);
+    orch.classList.add("busy"); orchState.textContent = "상위 모델, 의도 분석 중";
+
+    const plan = route(query);
+    await sleep(520);
+
+    if (!plan.picked.length) {
+      orch.classList.remove("busy"); orchState.textContent = "상위 모델, 담당 없음";
+      log(`<b>오케스트레이터</b>  맡길 에이전트를 찾지 못함`);
+      clock.textContent = elapsed(t0);
+      answer.innerHTML = `<p class="empty">이 질문은 어느 에이전트에게도 보내지 못했습니다. 경력, 프로젝트, 기술, 수상, 연락처에 관해 물어보면 답할 수 있습니다. 예: “${esc(EXAMPLES[0])}”</p>`;
+      return;
+    }
+
+    const why = [...new Set(plan.picked.flatMap(p => p.why))].slice(0, 5).join(", ");
+    log(`<b>오케스트레이터</b>  의도 분석: ${esc(why)}`);
+    await sleep(240);
+    log(`<b>라우팅</b>  ` + plan.picked.map(p => `<span class="tag" style="--c:${p.agent.color}">${esc(p.agent.name)}</span> ${p.score.toFixed(2)}`).join("  "));
+    orchState.textContent = `상위 모델, ${plan.picked.length}곳으로 전달`;
+    agentsEl.classList.add("routed");
+
+    const ctx = { query, matchedProjects: plan.matchedProjects, matchedTech: plan.matchedTech };
+    const results = await Promise.all(plan.picked.map(async (p, i) => {
+      await sleep(i * 150);
+      const w = W.out[p.agent.id];
+      w.beam.classList.add("on");
+      await comet(w.beam, p.agent.color, 640);
+      $("agent-" + p.agent.id).classList.add("on");
+      $("score-" + p.agent.id).textContent = p.score.toFixed(2);
+      await sleep(180);
+      const r = WORKERS[p.agent.id](ctx);
+      log(`<span class="tag" style="--c:${p.agent.color}">${esc(p.agent.name)} 에이전트</span>  ${esc(r.log)}`);
+      return { p, r };
+    }));
+
+    await sleep(200);
+    orch.classList.remove("busy"); orch.classList.add("done"); orchState.textContent = "상위 모델, 응답 합성 완료";
+    answer.innerHTML = results.map(({ p, r }) =>
+      `<div class="block" style="--c:${p.agent.color}"><div class="from">${esc(p.agent.name)} 에이전트</div>${r.html}<a class="more" href="${p.agent.anchor}">${esc(p.agent.name)} 섹션으로 이동</a></div>`
+    ).join("");
+    log(`<b>응답 합성</b>  ${results.length}개 에이전트의 결과를 합침`);
+    clock.textContent = elapsed(t0);
+  } finally {
+    running = false; sendBtn.disabled = false;
+  }
+}
+
+$("ask").addEventListener("submit", e => { e.preventDefault(); run(input.value); });
+EXAMPLES.forEach(text => {
+  const b = document.createElement("button");
+  b.type = "button"; b.textContent = text;
+  b.addEventListener("click", () => { input.value = text; run(text); });
+  $("chips").appendChild(b);
+});
+
+/* =========================================================
+   5. 아래 섹션 채우기
+   ========================================================= */
+$("nav-gh").href = PROFILE.github;
+
+$("exp-list").innerHTML = EXPERIENCE.map(e => `
+  <div class="card exp">
+    <div>
+      <h3>${esc(e.title)}</h3>
+      <div class="when">${esc(e.when)}</div>
+      <p>${esc(e.body)}</p>
+      <div class="facts">${e.facts.map(([b, s]) => `<div class="fact"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join("")}</div>
+    </div>
+    <ul>${e.points.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+  </div>`).join("");
+
+$("proj-list").innerHTML = PROJECTS.map(p => {
+  const head = `<div class="metric">${esc(p.metric)}</div><div class="metric-label">${esc(p.metricLabel)}</div>
+    <h3>${esc(p.title)}</h3><p class="one">${esc(p.one)}</p><div class="meta">${esc(p.meta)}</div>`;
+  const list = `<ul>${p.points.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
+  const foot = `<div class="foot">${p.stack.map(s => `<span class="tag-chip">${esc(s)}</span>`).join("")}${p.repo ? `<a class="repo" href="${esc(p.repo)}" target="_blank" rel="noopener">코드 보기</a>` : ""}</div>`;
+  return p.size === "full"
+    ? `<article class="card proj full" style="--c:${p.color}"><div class="body"><div>${head}</div><div>${list}${foot}</div></div></article>`
+    : `<article class="card proj ${p.size}" style="--c:${p.color}">${head}${list}${foot}</article>`;
+}).join("");
+
+$("skill-list").innerHTML = SKILLS.map(([k, v]) =>
+  `<div class="card"><h3>${esc(k)}</h3><div class="set">${v.split(/,\s*/).map(t => `<span>${esc(t)}</span>`).join("")}</div></div>`).join("");
+
+$("award-list").innerHTML = AWARDS.map(a =>
+  `<div class="award"><time>${esc(a.when)}</time><div><b>${esc(a.title)}</b>${a.body ? `<span>${esc(a.body)}</span>` : ""}</div></div>`).join("");
+
+$("contact-btns").innerHTML =
+  `<a class="btn primary" href="${esc(PROFILE.github)}" target="_blank" rel="noopener">GitHub 열기</a>` +
+  (PROFILE.email ? `<a class="btn ghost" href="mailto:${esc(PROFILE.email)}">메일 보내기</a>` : "");
+
+drawWires();
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawWires, 100); });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawWires);
+addEventListener("load", drawWires);
+</script>
+</body>
+</html>
